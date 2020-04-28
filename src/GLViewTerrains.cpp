@@ -355,7 +355,7 @@ void GLViewTerrains::spawnItem(Vector pos) {
     PxShape* shape = this->physics->phys->createShape(PxBoxGeometry(2.0f, 2.0f, 2.0f), *this->physics->phys->createMaterial(.5f, .3f, .2f));
     PxRigidDynamic* actor = PxCreateDynamic(*this->physics->phys, trans, *shape, 10.0f);
 
-    WOPxActor* wo = WOPxActor::New(actor, ManagerEnvironmentConfiguration::getSMM() + "models/box/box.blend", Vector(1, 1, 1));
+    WOPxActor* wo = WOPxActor::New(actor, ManagerEnvironmentConfiguration::getLMM() + "/models/box.blend", Vector(1, 1, 1));
     wo->pxActor->userData = wo;
     wo->setPosition(pos);
     worldLst->push_back(wo);
